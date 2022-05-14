@@ -12,12 +12,16 @@ function readFile (filePath, encoding = 'utf-8'){
 
 function writeFile (filePath, data, encoding = 'utf-8'){
     for (let i = 0; i < data.length; i++) {
-        fs.appendFileSync(filePath, `${data[i]}, `, encoding);
+        if(i === data.length - 1){
+            fs.appendFileSync(filePath, `${data[i]}`, encoding);
+        }else {
+            fs.appendFileSync(filePath, `${data[i]}, `, encoding);
+        }
     }
 }
 
 function sortArray (str){
-    return str.replaceAll(', ', ' ').join(' ');
+    return str.replaceAll(', ', ' ').split(' ').sort();
 }
 
 module.exports = {writeFile, readFile, sortArray};
