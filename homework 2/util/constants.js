@@ -5,4 +5,6 @@ const constants = {
     ENCODING : 'utf-8'
 };
 
+Object.freeze(constants);
+
 module.exports = constants;
