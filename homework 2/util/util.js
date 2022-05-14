@@ -11,7 +11,7 @@ function readFile (filePath, encoding = 'utf-8'){
 }
 
 function writeFile (filePath, data, encoding = 'utf-8'){
-    for (let i = 0; index < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         fs.appendFileSync(filePath, `${data[i]}, `, encoding);
     }
 }
