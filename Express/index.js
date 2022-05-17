@@ -11,8 +11,8 @@ app.post('/create', (req, res)=>{
 });
 
 app.get('/users', (req,res)=>{
-    const data = fs.readFileSync('./users.json');
-    res.status(200).send(data);
+    const data = fs.readFileSync('./users.json', 'utf-8');
+    res.send(data);
 });
 
 app.listen(3000);
